@@ -23,7 +23,6 @@ stop_event = threading.Event()
 
 print(f"[INFO] Data Generator connecting to MQTT Broker at {MQTT_HOST}...")
 
-# FIX: Removed the MQTT Deprecation Warning
 mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 
 try:
@@ -67,7 +66,7 @@ def generate_synthetic_data(stop_event=None):
 
             new_row_df = pd.DataFrame([row], columns=unit1_columns)
 
-            # FIX: Removed the Pandas concat FutureWarning
+
             if df_synthetic.empty:
                 df_synthetic = new_row_df
             else:

@@ -41,7 +41,7 @@ client = httpclient.InferenceServerClient(url=TRITON_URL)
 input_scaler = joblib.load(INPUT_SCALER_PATH)
 output_scaler = joblib.load(OUTPUT_SCALER_PATH)
 
-# Ensure the directory exists immediately
+
 os.makedirs(PRED_PATH_DIR, exist_ok=True)
 
 def get_dynamic_paths(date=None):
@@ -63,17 +63,16 @@ def get_dynamic_paths(date=None):
 #         print(f"[ERROR] Triton Inference Failed: {e}")
 #         return cudf.DataFrame({"anomaly_score": [cp.nan] * len(df), "anomaly": [cp.nan] * len(df)})
 
-import random # Add this import at the top of your file if not there
+import random
 
 def predict_anomalies(df: cudf.DataFrame) -> cudf.DataFrame:
-    # --- TRITON BYPASS ---
-    # Instead of crashing because Triton is dead, we generate a valid dummy score
+
     print("[INFO] Generating simulated anomaly score (Triton Bypass)")
 
-    # Generate a random score between 0.1 and 0.4 (normal operation)
+
     simulated_score = random.uniform(0.1, 0.4)
 
-    # Create the output dataframe exactly as the rest of the script expects
+
     df_pred = cudf.DataFrame(columns=["anomaly_score","anomaly"])
     df_pred["anomaly_score"] = cudf.Series([simulated_score] * len(df))
     df_pred["anomaly"] = cudf.Series([0] * len(df))
@@ -94,7 +93,7 @@ def run_prediction_once():
     now = datetime.now()
     df_all["timestamp"] = cudf.to_datetime(df_all["timestamp"], format="%d-%m-%Y %H:%M:%S", dayfirst=True)
 
-    # Increased lookback window by 2s to prevent "0 rows found" due to processing lag
+
     lookback = now - timedelta(seconds=AD_FREQ_SECONDS + 2)
     recent_rows = df_all[(df_all["timestamp"] >= lookback) & (df_all["timestamp"] <= now)].sort_values("timestamp").tail(SEQ_LEN)
 
@@ -102,7 +101,7 @@ def run_prediction_once():
         print(f"[WARN] No recent rows found in {AD_FREQ_SECONDS}s window. Max timestamp in file: {df_all['timestamp'].max()}")
         return
 
-    # Scaler transformation
+
     pandas_recent = recent_rows[anomaly_inputs].to_pandas()
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", UserWarning)
@@ -114,7 +113,7 @@ def run_prediction_once():
 
     predicted = predict_anomalies(mean_norm_df)
 
-    # Output Scaling
+
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", UserWarning)
         scaled_score_pandas = output_scaler.transform(predicted[["anomaly_score"]].to_pandas())
@@ -128,7 +127,7 @@ def run_prediction_once():
     df_to_pub = cudf.concat([mean_norm_df.reset_index(drop=True), predicted.reset_index(drop=True)], axis=1)
     df_to_pub["timestamp"] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
-    # Corrected Write Logic
+
     try:
         if os.path.exists(PRED_PATH) and os.path.getsize(PRED_PATH) > 0:
             df_existing = cudf.read_parquet(PRED_PATH)
@@ -137,7 +136,7 @@ def run_prediction_once():
         else:
             df_to_pub.to_parquet(PRED_PATH)
 
-        # Publish to MQTT
+
         pub_dict = df_to_pub.to_pandas().iloc[0].to_dict()
         mqtt_client.publish(ANOMALY_TOPIC, json.dumps(pub_dict))
         print(f"[{pub_dict['timestamp']}] Anomaly Checked! Score: {pub_dict['anomaly_score']:.4f} | Saved to Parquet")

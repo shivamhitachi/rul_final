@@ -7,7 +7,7 @@ import schedule
 
 from influxdb_client_3 import InfluxDBClient3, Point
 
-# --- CONFIGURATION ---
+
 INFLUX_HOST = "http://10.0.0.17:8181"
 INFLUX_TOKEN = "apiv3_380fh-u2dKAxzrnE-o7ZYwKvA6dURE2tCoLXnUYIjP_osSXH1gIExggakMOGvF74X-UbJA6yRukw6kkmp1Y8kA"
 INFLUX_DB = "predictive_maintenance"
