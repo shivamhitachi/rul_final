@@ -1,0 +1,2 @@
+recursive-include nvidia_twin/static *
+include nvidia_twin/*.pkl

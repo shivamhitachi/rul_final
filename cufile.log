@@ -1,0 +1,40 @@
+ 01-04-2026 05:25:41:854 [pid=519888 tid=519888] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 05:25:42:780 [pid=519888 tid=519888] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 05:31:39:972 [pid=537574 tid=537574] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 05:31:40:924 [pid=537574 tid=537574] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 05:36:08:890 [pid=550833 tid=550833] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 05:36:09:845 [pid=550833 tid=550833] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 05:52:21:592 [pid=599707 tid=599707] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 05:52:22:538 [pid=599707 tid=599707] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 05:59:48:259 [pid=621879 tid=621879] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 05:59:49:310 [pid=621879 tid=621879] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 06:20:51:72 [pid=701834 tid=701834] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 06:20:52:16 [pid=701834 tid=701834] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 06:21:38:662 [pid=704974 tid=704974] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 06:21:39:611 [pid=704974 tid=704974] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 06:27:00:600 [pid=724248 tid=724248] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 06:27:01:524 [pid=724248 tid=724248] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 06:31:44:74 [pid=741301 tid=741301] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 06:31:45:46 [pid=741301 tid=741301] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 06:44:08:154 [pid=786064 tid=786064] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 06:44:09:213 [pid=786064 tid=786064] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 08:23:17:704 [pid=1144103 tid=1144103] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 08:23:18:656 [pid=1144103 tid=1144103] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 08:30:54:69 [pid=1171588 tid=1171588] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 08:30:55:14 [pid=1171588 tid=1171588] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 08:45:48:587 [pid=1224801 tid=1224801] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 08:45:49:538 [pid=1224801 tid=1224801] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 09:41:13:610 [pid=1423193 tid=1423193] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 09:41:14:567 [pid=1423193 tid=1423193] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 10:30:31:443 [pid=1607463 tid=1607463] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 10:30:32:409 [pid=1607463 tid=1607463] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 10:32:41:335 [pid=1615359 tid=1615359] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 10:32:42:286 [pid=1615359 tid=1615359] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 01-04-2026 10:39:21:492 [pid=1639251 tid=1639251] NOTICE  cufio-drv:830 running in compatible mode
+ 01-04-2026 10:39:22:439 [pid=1639251 tid=1639251] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 02-04-2026 05:47:27:101 [pid=1642691 tid=1642691] NOTICE  cufio-drv:830 running in compatible mode
+ 02-04-2026 05:47:28:156 [pid=1642691 tid=1642691] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 02-04-2026 05:57:10:265 [pid=1679753 tid=1679753] NOTICE  cufio-drv:830 running in compatible mode
+ 02-04-2026 05:57:11:305 [pid=1679753 tid=1679753] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1
+ 02-04-2026 06:01:07:554 [pid=1694224 tid=1694224] NOTICE  cufio-drv:830 running in compatible mode
+ 02-04-2026 06:01:08:591 [pid=1694224 tid=1694224] ERROR  cufio-fs:68 mount options not specified for device in mount table /dev/sdb1

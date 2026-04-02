@@ -1,0 +1,10 @@
+services:
+  influxdb3-explorer:
+    image: influxdata/influxdb3-ui:1.6.2
+    container_name: influxdb3-explorer
+    ports:
+      - "8888:80"
+    volumes:
+      - ./config:/app-root/config:ro
+      - ./explorer-db:/db
+    restart: unless-stopped

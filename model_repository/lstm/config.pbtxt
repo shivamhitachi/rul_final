@@ -1,0 +1,17 @@
+name: "lstm"
+platform: "tensorflow_savedmodel"
+max_batch_size: 256
+input [
+  {
+    name: "inputs"
+    data_type: TYPE_FP32
+    dims: [ 6, 7 ]
+  }
+]
+output [
+  {
+    name: "output_0"
+    data_type: TYPE_FP32
+    dims: [ 9 ]
+  }
+]

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvidia-e2cc-twin"
+version = "1.0.0"
+description = "NVIDIA E2CC Predictive Maintenance Digital Twin"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "pandas",
+    "schedule",
+    "scikit-learn",
+    "joblib",
+    "influxdb3-python",
+    "python-dotenv"
+]
+
+[project.scripts]
+
+e2cc-start = "nvidia_twin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+
+nvidia_twin = ["static/dist/*", "static/dist/assets/*", "*.pkl"]
